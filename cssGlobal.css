@@ -1,0 +1,401 @@
+:root {
+    --colorDo_Dam : #FF2323;
+    --colorDo_Nhat : #E85550;
+    --colorTrang : #fff;
+    --colorXam : #333333;
+    --colorXam_Nhat : #BDB4B4;
+    --colorDen : #000;
+
+    --colorXam_Contact : #201f20;
+    --color_Xam_Nhat_Contact : #aaa9aa;
+    --color_Trang_Nhat_Contact : #c7c8cd;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.content-box {
+    padding: 0 50px;
+}
+.container {
+    max-width: 1450px;
+    margin: 0 auto;
+}
+.light_red-title {
+    color: var(--colorDo_Dam);
+}
+.light-red {
+    color: var(--colorDo_Nhat);
+}
+body {
+    background-color: var(--colorXam);
+}
+
+/*---- menu ----*/
+.header__menu {
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.85);
+    height: 70px;
+    z-index: 10000;
+}
+.btn__menu {
+    display: none;
+}
+.header_menu-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.header__menu .logo {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 100px;
+}
+.header__menu .logo img {
+    width: 100%;
+    height: auto;
+}
+.header__menu ul {
+    display: flex;
+    list-style: none;
+}
+.header__menu ul li:not(:last-child) {
+    margin-right: 30px;
+}
+.header__menu ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 12px;
+}
+.header__menu ul li a:hover {
+    color: #E85550;
+}
+.header__menu ul.active {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #201f20;
+}
+.header__menu ul.active li {
+    margin: 10px 0;
+}
+.header__menu ul.active li a {
+    color: #e85550;
+    font-weight: 700;
+}
+
+/*---- button small ----*/
+
+.button-small {
+    color: #E85550;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid #E85550;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 190px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+    font-weight: 500;
+}
+.button-small i {
+    margin-left: 15px;
+}
+.button-small::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #E85550;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    z-index: -1;
+    -webkit-transition: all .5s;
+}
+.button-small:hover::after{
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+.button-small:hover {
+    color: white;
+}
+
+
+@media screen and (max-width : 768px) {
+     .header__menu {
+         height: 50px;
+     }
+     .header__menu ul li a {
+         font-size: 10px;
+     }
+     .header__menu .logo {
+         display: flex;
+         height: 100%;
+         align-items: center;
+         width: 70px !important;
+     }
+     .header__menu .logo img {
+         width: 100%;
+         height: auto;
+     }
+ }
+ @media screen and (max-width : 550px) {
+     .header__menu ul {
+         display: none;
+     }
+     /**--- menu respon -----*/
+     .header__menu ul.active {
+         display: block;
+     }
+     /*------------------------------------------- them positon releative the cha----*/
+     .btn__menu {
+         display: block;
+         color: white;
+         cursor: pointer;
+         font-size: 20px;
+     }
+ }
+
+ /*-------------------- title -------------------------*/
+ .main_container {
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+.title_page {
+    color: var(--colorTrang);
+    text-transform: uppercase;
+    font-weight: 900;
+    font-style: italic;
+    text-align: center;
+    font-size: 30px;
+}
+@media screen and (max-width : 768px) {
+    .main_container{
+        margin-top: 90px;
+    }
+   .title_page {
+    font-size: 20px;
+    }
+}
+@media screen and (max-width : 550px) {
+    .title_page {
+        font-size: 14px;
+    }
+}
+
+
+
+
+ /*----------------------- contact -------------------*/
+ .contact_content {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    grid-column-gap: 25px;
+}
+.contact_content h1{
+    color: var(--colorTrang);
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.contact_content h1::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: var(--colorDo_Nhat);
+    bottom: 0;
+    left: 0;
+}
+.contact_form input {
+    width: 100%;
+    height: 50px;
+    background-color: var(--colorXam_Contact);
+    border: none;
+    outline: none;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    color: var(--colorTrang);
+}
+.contact_form input::placeholder,.contact_form textarea::placeholder {
+    color: var(--color_Xam_Nhat);
+    font-weight: 450;
+    opacity: .5;
+}
+.contact_form textarea{
+    width: 100%;
+    height: 120px;
+    background-color: var(--colorXam_Contact);
+    border: none;
+    outline: none;
+    padding: 10px 0 0 20px;
+    color: var(--colorTrang);
+}
+.contact_form button {
+    margin-top: 30px;
+    cursor: pointer;
+    padding: 10px 15px;
+    color: var(--color_Trang_Nhat);
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid var(--colorXam_Contact);
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 500;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -ms-transition: all .2s;
+    -o-transition: all .2s;
+}
+.contact_form button:hover {
+    background-color: var(--colorDo_Nhat);
+    color: var(--colorTrang);
+}
+.contact_connect .contact_connect_item{
+    border: 1.5px solid var(--colorXam_Contact);
+    padding: 15px 25px;
+    margin-bottom: 15px;
+}
+.contact_connect .contact_connect_item a{
+    color: var(--color_Trang_Nhat);
+    text-decoration: none;
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+.contact_connect .contact_connect_item a i {
+    text-decoration: none;
+    margin-right: 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1rem;
+    width: 40px;
+    height: 40px;
+    color: var(--colorTrang);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: var(--colorXam_Contact);
+}
+.contact_connect .contact_connect_item a:hover i{
+    background-color: var(--colorDo_Nhat);
+}
+
+/*-------- footer -------------*/
+footer {
+    margin-top: 100px;
+    position: absolute;
+    width: 100%;
+    height: 55px;
+    border-top: 1.5px solid var(--colorXam_Contact);
+    left: 0;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--color_Trang_Nhat);
+    line-height: 55px;
+    letter-spacing: .7px;
+    font-size: .9rem;
+    font-weight: 500;
+}
+footer span{
+    color: var(--colorDo_Nhat);
+}
+
+@media screen and (max-width : 740px) {
+    .contact_content {
+        grid-template-columns: 1fr;
+        grid-template-areas: "connect" "form";
+        grid-row-gap: 50px;
+    }
+    .contact_form {
+        grid-area: form;
+        margin-top: 40px;
+        padding: 0 10px;
+    }
+    .contact_connect {
+        margin-top: 40px;
+        grid-area: connect;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 40px;
+    }
+    .contact_connect h1 {
+        display: none;
+    }
+    .contact_connect .contact_connect_item{
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    .contact_connect_item a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: .8rem !important;
+    }
+    .contact_connect_item a i {
+        width: 50px !important;
+        height: 50px !important;
+        line-height: 50px !important;
+        margin: 0 0 10px 0 !important;
+        font-size: 1.1rem !important;
+    }
+    .contact_content h1{
+        text-align: center;
+        font-size: 1.2rem ;
+        letter-spacing: .5px;
+        font-weight: 400;
+    }
+    .contact_content h1::after {
+        display: none;
+    }
+    .contact_form button {
+        margin-top: 20px;
+    }
+    footer {
+        margin-top: 50px;
+        font-size: .7rem;
+    }
+}

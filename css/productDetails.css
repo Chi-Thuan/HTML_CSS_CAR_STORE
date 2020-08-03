@@ -1,0 +1,211 @@
+:root {
+    --colorDo_Dam : #FF2323;
+    --colorDo_Nhat : #E85550;
+    --colorTrang : #fff;
+    --colorXam : #333333;
+    --colorXam_Nhat : #BDB4B4;
+    --colorDen : #000;
+    --colorXam_Contact : #201f20;
+    --color_Xam_Nhat_Contact : #aaa9aa;
+    --color_Trang_Nhat_Contact : #c7c8cd;
+}
+.content_detail {
+    margin-top: 50px;
+    display:  grid;
+    grid-template-columns: 60% 40%;
+    box-sizing: border-box;
+}
+.content_detail .detail_img {
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+.content_detail .detail_img img {
+    width: 100%;
+    height:  100%;
+}
+.detail_description {
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.price {
+    font-size:  30px;
+    color: var(--colorDo_Nhat);
+}
+.detail_description p {
+    color: white;
+    font-size: 14px;
+    margin: 20px 0;
+}
+.description-italic {
+    font-style: italic;
+}
+@media screen and (max-width : 1024px) {
+    .title_page {
+        font-size: 20px;
+    }
+    .content_detail {
+        margin-top: 30px;
+        grid-template-columns: 70% 30%;
+    }
+    .description-normal {
+        display: none;
+    }
+    .detail_description, .content_detail .detail_img {
+        padding: 10px;
+    }
+    .price {
+        font-size: 20px;
+    }
+    .detail_description p {
+        font-size: 12px;
+        margin: 20px 0;
+    }
+    .button-small{
+        width: 140px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width : 768px) {
+    .content_detail {
+        grid-template-columns: 50% 50%;
+    }
+    .title_page {
+        font-size: 15px;
+    }
+    .description-normal {
+        display: none;
+    }
+    .detail_description, .content_detail .detail_img {
+        padding: 10px;
+    }
+    .price {
+        font-size: 25px;
+    }
+    .detail_description p {
+        font-size: 13px;
+        margin: 20px 0;
+    }
+    .button-small{
+        width: 120px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
+@media screen and (max-width : 550px) {
+    .content_detail {
+        grid-template-columns: 100%;
+    }
+    .title_page {
+        font-size: 10px;
+    }
+    .detail_description {
+        padding-top: 0 !important;
+    }
+    .description-normal {
+        display: none;
+    }
+    .detail_description, .content_detail .detail_img {
+        padding: 10px;
+    }
+    .price {
+        font-size: 15px;
+    }
+    .detail_description p {
+        font-size: 10px;
+        margin: 5px 0;
+        letter-spacing: .5px;
+    }
+    .description-normal {
+        display: block;
+    }
+    .wrapper_btn {
+        display: flex;
+        justify-content : center;
+    }
+    .button-small{
+        margin-top: 20px;
+        width: 110px;
+        height: 35px;
+        font-size: 10px;
+    }
+}
+
+/*---- description car -----*/
+.main_container  hr{
+    width: 90%;
+    border: none;
+    height: 1.5px;
+    margin: 20px auto;
+    background-color: var(--colorXam_Contact);
+}
+.wrapper_text {
+    margin: 80px 0;
+}
+.wrapper_text h4 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+    padding-left: 20px;
+}
+.wrapper_text-content p {
+    color: #BDACAD;
+    text-align: center;
+    font-size: 14px;
+    margin: 20px 0;
+    padding: 0px 100px;
+}
+.wrapper_text-content-img {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+}
+.wrapper_text-content-img img {
+    width:  100%;
+}
+@media screen and (max-width : 768px) {
+    .wrapper_text {
+        margin: 40px 0;
+    }
+    .wrapper_text h4 {
+        font-size: 16px;
+    }
+    .wrapper_text-content-img {
+        width: auto;
+        height: 250px;
+        display: flex;
+        justify-content: center;
+    }
+    .wrapper_text-content-img img {
+        height: 100%;
+        width: auto;
+    }
+    .wrapper_text-content p {
+        padding: 0px 50px;
+    }
+}
+@media screen and (max-width : 550px) {
+    .wrapper_text {
+        margin: 30px 0;
+    }
+    .wrapper_text h4 {
+        font-size: 15px;
+    }
+    .wrapper_text-content-img {
+        padding : 0 10px;
+        width: 100%;
+        margin: 20px auto;
+    }
+    .wrapper_text-content-img img {
+        height: auto;
+        width: 100%;
+    }
+    .wrapper_text-content p {
+        padding: 0px 20px;
+        margin: 10px 0;
+    }
+}
