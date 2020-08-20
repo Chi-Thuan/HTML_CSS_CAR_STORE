@@ -14,7 +14,11 @@
 </head>
 <body>
     <div id="fullpage">
-        <header class="section">
+        <div class="controlMovePage">
+            <a href="#top" class="btnControlMovePage"><i class="fas fa-arrow-up"></i></a>
+            <a href="#end" class="btnControlMovePage"><i class="fas fa-arrow-down"></i></a>
+        </div>
+        <header class="section" id="top">
             <div class="header__content">
                 <video class="bg__video" src="./backgroundVideo/video.mp4" loop='loop' muted autoplay="true"></video>           
                 <nav class="header__menu">
@@ -29,6 +33,12 @@
                             </li>
                             <li>
                                 <a href="./contact.html">liên hệ</a>
+                            </li>
+                            <li>
+                                <a href="#">Đăng nhập</a>
+                            </li>
+                            <li>
+                                <a href="./register.html">Đăng ký</a>
                             </li>
                         </ul>
                         <div class="btn__menu">
@@ -48,55 +58,12 @@
                 </div>
             </div>
         </header>
-
-            <section class="section banner__Car  Car1 " >
-                <img src="./img/bannerCar01.png" style="position: absolute; z-index: -1; width: 100%; height: 100%;" alt="" srcset="">
-                <div class="container banner__Car__content">
-                    <div class="banner__Car-txt  content-box"> 
-                        <h1>LAMBORGHINI <span class="light">SC18 ALSTON</span></h1>
-                        <p>
-                            * Kánh gió sau bằng sợi carbon có thể điều chỉnh lớn </br>
-                            * Khe hút gió phía trước trên mui xe lấy từ Huracán GT3</br>
-                            * Bánh xe mới giống Veneno được tạo ra đặc biệt cho xe</br>
-                            * Hệ thống ống xả một lần cùng với đèn hậu từ Centenario</br>
-                            * Mui xe mui trần và vây  trung tâm từ Huracán Super Trofeo Evo
-                        </p>
-                    </div>
-                    <div class="banner__Car-btn  content-box">
-                        <a href="./productDetail.html" class="button-big">
-                            discover<i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div> 
-                </div>
-            </section>
-
-            <section class="section banner__Car  Car2" >
-                <img src="./img/bannerCar02.jpg" style="  position: absolute; z-index: -1; width: 100%; height: 100%;" alt="" srcset="">
-                <div class="container banner__Car__content">
-                    <div class="banner__Car-txt  content-box"> 
-                        <h1>LAMBORGHINI <span class="light">SC18 ALSTON</span></h1>
-                        <p>
-                            * Kánh gió sau bằng sợi carbon có thể điều chỉnh lớn </br>
-                            * Khe hút gió phía trước trên mui xe lấy từ Huracán GT3</br>
-                            * Bánh xe mới giống Veneno được tạo ra đặc biệt cho xe</br>
-                            * Hệ thống ống xả một lần cùng với đèn hậu từ Centenario</br>
-                            * Mui xe mui trần và vây  trung tâm từ Huracán Super Trofeo Evo
-                        </p>
-                    </div>
-                    <div class="banner__Car-btn  content-box">
-                        <a href="./productDetail.html" class="button-big">
-                            discover<i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div> 
-                </div>
-            </section>
-
             <section class="section" id="trending">
                 <h1 class="section-title container content-box">
                     Tren<span class="light-red">ding</span>
                 </h1>
                 <div class="trending__list">
-                    <div class="trending__item">
+                    <div class="trending__item" href="">
                         <img src="./img/bannerCar01.png" alt="">
                         <div class="trending__item-content content-box">
                             <h1 class="trending__item-title">LAMBORGHINI <span class="light-red">sc18 alston</span></h1>
@@ -112,6 +79,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="trending__item">
                         <img src="./img/bannerCar02.jpg" alt="">
                         <div class="trending__item-content content-box">
@@ -163,71 +131,6 @@
                 </div>
             </section>
 
-            <section id="activity">
-                <h1 class="section-title container content-box">
-                    Acti<span class="light-red">vity</span>
-                </h1>
-                <div class="list__component container content-box">
-                    <div class="list__item">
-                        <div class="item__img">
-                            <img src="./img/active01.jpg" alt="">
-                        </div>
-                        <div class="item__content">
-                            <p class="item__content-title">
-                                SUPERCAR CHĂM SÓC TRỌN VẸN
-                            </p>
-                            <p class="item__content-txt">
-                                Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                Et quidem.
-                            </p>
-                            <a href="" class="button-small">
-                                discover<i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="list__item">
-                        <div class="item__img">
-                            <img src="./img/active02.jpg" alt="">
-                        </div>
-                        <div class="item__content">
-                            <p class="item__content-title">
-                                SUPERCAR KHUYẾN MÃI
-                            </p>
-                            <p class="item__content-txt">
-                                Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                Et quidem.
-                            </p>
-                            <a href="" class="button-small">
-                                discover<i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="list__item">
-                        <div class="item__img">
-                            <img src="./img/active03.jpg" alt="">
-                        </div>
-                        <div class="item__content">
-                            <p class="item__content-title">
-                                BẠN CẦN HỖ TRỢ
-                            </p>
-                            <p class="item__content-txt">
-                                Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                Et quidem.
-                            </p>
-                            <a href="" class="button-small">
-                                discover<i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>  
-
-                </div>
-            </section>
-
             <section class="section" id="service">
                 <h1 class="section-title container content-box">
                     ser<span class="light-red">vice</span>
@@ -243,13 +146,9 @@
                                 VAY SPERCAR - MUA SUPERCAR
                             </p>
                             <p class="item__content-txt">
-                                Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                Et quidem.
+                                Việc mua xe vay ngân hàng hiện nay rất dễ dàng. SUPERCAR có các chính sách cực kỳ tốt từ các 
+	hệ thống ngân hàng sẽ giúp bạn dễ dàng tìm mua xe với lãi suất ưu đãi.
                             </p>
-                            <a href="" class="button-small">
-                                discover<i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
 
@@ -262,13 +161,9 @@
                                 PHỤ TÙNG & PHỤ KIỆN
                             </p>
                             <p class="item__content-txt">
-                                Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                Et quidem.
+                                SUPERCAR là đơn vị chuyên phân phối sỉ, lẻ phụ tùng ô tô hàng chính hãng. Toàn bộ sản phẩm phụ tùng ô tô bán ra đều cam kết đúng nguồn gốc xuất xứ, thương hiệu
+				. vì thế quý khách hàng hoàn toàn có thể yên tâm khi sử dụng các sản phẩm mà SUPERCAR cung cấp.
                             </p>
-                            <a href="" class="button-small">
-                                discover<i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
                     </div>
 
@@ -281,13 +176,9 @@
                                 XE ĐÃ QUA SỬ DỤNG
                             </p>
                             <p class="item__content-txt">
-                                Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                Et quidem.
+                                Anh chị khi đang tìm mua xe nhưng phân vân việc trao đổi lại chiếc xe của mình đang chạy bán bao nhiêu
+			    . Đừng bận tâm, hãy liên hệ ngay với SUPERCAR nhé!
                             </p>
-                            <a href="" class="button-small">
-                                discover<i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
                     </div>  
 
@@ -300,13 +191,8 @@
                                 BẢO HIỂM SUPERCAR
                             </p>
                             <p class="item__content-txt">
-                                Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                Et quidem.
+                                Chúng tôi chăm sóc xe của bạn tốt hơn  SUPERCAR cung cấp giải pháp cho những vấn đề mà bạn đang gặp phải. Tham gia chương trình bảo hiểm ô tô của SUPERCAR để bảo vệ an toàn cho tính mạng và tài sản của bạn
                             </p>
-                            <a href="" class="button-small">
-                                discover<i class="fas fa-arrow-right"></i>
-                            </a>
                         </div>
                     </div>  
 
@@ -448,7 +334,7 @@
                     </div> 
 
                 </div>
-                <a href="" class="button-big">
+                <a class="button-big" style="cursor: default;">
                     More<i class="fas fa-arrow-right"></i>
                 </a>
             </section>

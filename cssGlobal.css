@@ -5,7 +5,6 @@
     --colorXam : #333333;
     --colorXam_Nhat : #BDB4B4;
     --colorDen : #000;
-
     --colorXam_Contact : #201f20;
     --color_Xam_Nhat_Contact : #aaa9aa;
     --color_Trang_Nhat_Contact : #c7c8cd;
@@ -14,6 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 .content-box {
     padding: 0 50px;
