@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
@@ -9,12 +11,6 @@
 	<link rel="stylesheet" href="./cssGlobal.css">
 	<title>Đăng nhập</title>
 	<link rel="icon" href="./img/iconLogo.svg">
-
-	<style>
-		.erro {
-			border: 2px solid red !important;
-		}
-	</style>
 
 </head>
 
@@ -81,7 +77,92 @@
 	    	</div>
 		</div> 
     </div>
-    </div>
+	</div>
+	<div class="thongBao">
+		<h1>ĐĂNG NHẬP <br> THÀNH CÔNG</h1>
+		<div class="groupBtnThongBao">
+			<P>Tự động đi đến trang chủ sau 4s</P>
+		</div>
+	</div>
+	<div class="thongBaoErro">
+		<h1>KHÔNG KHỚP</h1>
+		<div class="groupBtnThongBao">
+			<P class="nhapLai">Nhập lại</P>
+		</div>
+	</div>
+	<div class="overlayThongBao">
+	</div>
+
+	<style>
+		.overlayThongBao {
+			position: fixed;
+			z-index: 99;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color:  rgba(0, 0, 0, 0.85);
+			display: none;
+		}
+		.thongBao, .thongBaoErro {
+			display: none;
+			padding-top: 20px;
+			flex-direction: column;
+			align-items: center;
+			z-index: 100;
+			width: 500px;
+			background-color: #17a2b8;
+			height: 300px;
+			top: 50%;
+			position: fixed;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 10px;
+		}
+		.thongBaoErro {
+			background-color: #dc3545;
+			display: none;
+		}
+		.thongBao.openTb {
+			display: flex;
+		}
+		.thongBao h1, .thongBaoErro h1 {
+			text-align: center;
+			color: white;
+		}
+		.thongBao .groupBtnThongBao, .thongBaoErro .groupBtnThongBao {
+			margin-top: 50px;
+		}
+		.thongBao .groupBtnThongBao p, .thongBaoErro .groupBtnThongBao p{
+			text-align: center;
+			color: white;
+			margin-bottom: 50px;
+		}
+		.nhapLai {
+			padding: 18px 0 !important;
+			border: 1px solid white;
+			background-color: white;
+			color: black !important;
+			cursor: pointer;
+			font-size: 18px;
+		}
+		@media screen and (max-width : 550px) {
+			.thongBao, .thongBaoErro {
+				padding-top: 50px;
+				width: 70%;
+				height: 200px;
+			}
+			.thongBao h1, .thongBaoErro h1 {
+				font-size: 24px;
+				margin: 0;
+			}
+			.thongBao .groupBtnThongBao p, .thongBaoErro .groupBtnThongBao p{
+				font-size: 14px;
+				padding: 0 20px;
+				margin-bottom: 30px;
+			}
+		}
+	</style>
 
 </body>
 	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
@@ -93,20 +174,33 @@
 
 	<script>
 		var btnSubmit = document.querySelector('#submit');
+		var thongBao = document.querySelector('.thongBao');
+		var thongBaoErro = document.querySelector('.thongBaoErro');
+		var overlayThongBao = document.querySelector('.overlayThongBao');
+		var btnNhapLai = document.querySelector('.nhapLai');
 
 		btnSubmit.addEventListener('click', () => {
 			var email = document.querySelector('input[name="email"]').value;
 			var password = document.querySelector('input[name="matKhau"]').value;
-			
+
 			var user = JSON.parse(localStorage.getItem('db'));
 
 			if(email === user.email && password === user.password) {
-				alert('Đăng nhập thành công !!!');
-				window.location.href="./index.html";
+				thongBao.classList.add('openTb');
+				overlayThongBao.style.display="block";
+				setTimeout(()=> {
+					window.location.href="./index.html";
+				}, 4000)
 			}else{
-				alert('Không khớp !!!')
+				thongBaoErro.style.display="block";
+				overlayThongBao.style.display="block";
+				btnNhapLai.addEventListener('click', ()=> {
+					thongBaoErro.style.display="none";
+					overlayThongBao.style.display="none";
+				})
 			}
-		})
+		});
+
 	</script>
 
 </html>

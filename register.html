@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
@@ -177,23 +179,94 @@
 		</div> 
     </div>
 	</div>
-	<!-- <div class="thongBao">
-		<p>Bạn có muốn nhận thông báo từ SuperCar không ???</p>
-		<div class="tbGroup">
-			
+	<div class="thongBao">
+		<h1>ĐĂNG KÝ <br> THÀNH CÔNG</h1>
+		<div class="groupBtnThongBao">
+			<P>Bạn có muốn đăng nhập ngay không ?</P>
+			<div class="wrapperbtnTB">
+				<a href="./index.html">Quay lại trang chủ</a>
+				<a href="./login.html">Đến trang đăng nhập</a>
+			</div>
 		</div>
-	</div> -->
+	</div>
+	<div class="overlayThongBao">
+	</div>
 
 	<style>
+		.overlayThongBao {
+			position: fixed;
+			z-index: 99;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color:  rgba(0, 0, 0, 0.85);
+			display: none;
+		}
 		.thongBao {
+			display: none;
+			padding-top: 40px;
+			flex-direction: column;
+			align-items: center;
 			z-index: 100;
 			width: 500px;
+			background-color: #17a2b8;
 			height: 500px;
-			background-color: silver;
 			top: 50%;
 			position: fixed;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			border-radius: 10px;
+		}
+		.thongBao.openTb {
+			display: flex;
+		}
+		.thongBao h1 {
+			text-align: center;
+			color: white;
+		}
+		.thongBao .groupBtnThongBao {
+			margin-top: 50px;
+		}
+		.thongBao .groupBtnThongBao p {
+			text-align: center;
+			color: white;
+			margin-bottom: 50px;
+		}
+		.thongBao .groupBtnThongBao  a {
+			margin: 5px;
+			padding: 10px 20px;
+			background-color: #aaa9aa;
+			color: white;
+			text-decoration: none;
+			border-radius: 20px;
+		}
+		.thongBao .groupBtnThongBao  a:last-child {
+			background-color: #F3BB45;
+		}
+		@media screen and (max-width : 550px) {
+			.thongBao {
+				width: 70%;
+				height: 300px;
+			}
+			.thongBao h1 {
+				font-size: 24px;
+				margin: 0;
+			}
+			.thongBao .groupBtnThongBao p {
+				font-size: 14px;
+				padding: 0 20px;
+				margin-bottom: 30px;
+			}
+			.thongBao .groupBtnThongBao .wrapperbtnTB {
+				display: flex;
+				justify-content: center;
+			}
+			.thongBao .groupBtnThongBao  a {
+				font-size: 9px;
+				margin: 3px;
+				padding: 5px 7px;
+			}
 		}
 	</style>
 </body>
@@ -208,6 +281,8 @@
 		var btnSubmit = document.querySelector("#submit");
 		var Checkpassword = document.querySelector('input[name="checkMatKhau"]');
 		var btnNext = document.querySelector(".btn-next");
+		var formThongBao = document.querySelector('.thongBao');
+		var openOverlay = document.querySelector('.overlayThongBao');
 		Checkpassword.addEventListener('blur', () => {
 			var password = document.querySelector('input[name="matKhau"]').value;
 			if(password != Checkpassword.value) {
@@ -237,9 +312,8 @@
 
 			localStorage.setItem('db', JSON.stringify(user));
 			
-			alert('dang ky thanh cong')
-
-			window.location.href='./index.html';
+			formThongBao.classList.add('openTb');
+			openOverlay.style.display="block";
 
 		})
 	</script>

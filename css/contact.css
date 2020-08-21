@@ -257,8 +257,38 @@
 }
 @media only screen and (max-width : 560px){
     .listMember {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
         grid-column-gap: 15px;
         grid-row-gap: 30px;
+    }
+    .background {
+        height: 80px;
+    }
+    .member {
+        max-width: 250px;
+        height: 230px;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+        -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+        box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+    }
+    .avatar {
+        width:  50px;
+        height: 50px;
+    }
+    .content .name {
+        font-size: 12px;
+        margin: 40px 0 15px;
+    }
+    .content p {
+        font-size: 10px;
+    }
+    .social  li {
+        width: 27px;
+        height: 27px;
     }
 }

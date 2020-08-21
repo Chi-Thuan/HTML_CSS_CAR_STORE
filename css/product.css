@@ -328,12 +328,16 @@ body {
     width: 100px;
     height: 35px;
     font-size: 10px;
+    border: 1.5px solid var(--colorDo_Nhat);
 }
 .main_container .next {
     margin-top: 50px;
     display: flex;
     justify-content: center;
-
+}
+.btnGroup .button-small:last-child{
+    background-color: var(--colorDo_Nhat);
+    color: var(--colorTrang);
 }
 @media screen and (max-width : 1090px) {
     .list_product {
