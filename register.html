@@ -1,12 +1,21 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="assets/css/paper-bootstrap-wizard.css" rel="stylesheet" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 	<link href="assets/css/themify-icons.css" rel="stylesheet">
 	<link rel="stylesheet" href="./cssGlobal.css">
+	<title>Đăng ký tài khoảng</title>
+	<link rel="icon" href="./img/iconLogo.svg">
+	<style>
+		.erro {
+			border: 2px solid red !important;
+		}
+	</style>
+
 </head>
 
 	<body>
@@ -88,6 +97,18 @@
 													<input name="email" type="email" class="form-control" placeholder="Nhập Email ...">
 												</div>
 											</div>
+											<div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
+													<label>Mật khẩu <small>(bắt buộc)</small></label>
+													<input name="matKhau" type="password" style="border: red;" class="form-control" placeholder="Nhập mật khẩu...">
+												</div>
+											</div>
+											<div class="col-sm-10 col-sm-offset-1">
+												<div class="form-group">
+													<label>Nhập lại mật khẩu <small>(bắt buộc)</small></label>
+													<input name="checkMatKhau" type="password" class="form-control" placeholder="Nhập lại mật khẩu ...">
+												</div>
+											</div>
 										</div>
 		                            </div>
 		                            <div class="tab-pane" id="account">
@@ -132,7 +153,7 @@
 		                                    <div class="col-sm-10 col-sm-offset-1">
 		                                    	<div class="form-group">
 		                                            <label>Địa chỉ</label>
-		                                            <input type="text" class="form-control" placeholder="Nhập địa chỉ">
+		                                            <input type="text" name="address" class="form-control" placeholder="Nhập địa chỉ">
 		                                        </div>
 		                                    </div>
 		                                </div>
@@ -141,7 +162,7 @@
 		                        <div class="wizard-footer">
 		                            <div class="pull-right">
 		                                <input type='button' class='btn btn-next btn-fill btn-warning btn-wd' name='next' value='Kế tiếp' />
-		                                <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Đăng ký' />
+		                                <input type='button' id="submit" class='btn btn-finish btn-fill btn-warning btn-wd' name='finish' value='Đăng ký' />
 		                            </div>
 		                            <div class="pull-left">
 		                                <input type='button' style="border: 2px solid #adadad; color: white;" class='btn btn-previous btn-default btn-wd' name='previous' value='Trở lại' />
@@ -155,8 +176,26 @@
 	    	</div>
 		</div> 
     </div>
-    </div>
+	</div>
+	<!-- <div class="thongBao">
+		<p>Bạn có muốn nhận thông báo từ SuperCar không ???</p>
+		<div class="tbGroup">
+			
+		</div>
+	</div> -->
 
+	<style>
+		.thongBao {
+			z-index: 100;
+			width: 500px;
+			height: 500px;
+			background-color: silver;
+			top: 50%;
+			position: fixed;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
 </body>
 	<script src="assets/js/jquery-2.2.4.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
@@ -166,31 +205,42 @@
 	<script src="assets/js/jquery.validate.min.js" type="text/javascript"></script>
 
 	<script>
-		var btn = document.querySelector("input[name='next']");
-		
-	
+		var btnSubmit = document.querySelector("#submit");
+		var Checkpassword = document.querySelector('input[name="checkMatKhau"]');
+		var btnNext = document.querySelector(".btn-next");
+		Checkpassword.addEventListener('blur', () => {
+			var password = document.querySelector('input[name="matKhau"]').value;
+			if(password != Checkpassword.value) {
+				Checkpassword.classList.add('erro');
+				btnNext.disabled = true;
+			}else{
+				Checkpassword.classList.remove('erro');
+				btnNext.disabled = false;
+			}
+		})
 
-		btn.addEventListener('click', () => {
+		btnSubmit.addEventListener('click', () => {
 			var name = document.querySelector('input[name="firstname"]').value;
 			var email = document.querySelector('input[name="email"]').value;
-			
-			var listUser = [{name : 'abc', email : 'xyz'}];
-			localStorage.setItem('db', JSON.stringify(listUser));
+			var job = document.querySelector('input[name="jobb"]').value;
+			var address = document.querySelector('input[name="address"]').value;
+			var password = document.querySelector('input[name="matKhau"]').value;
+			var Checkpassword = document.querySelector('input[name="checkMatKhau"]').value;
 
 			var user = {
 				name,
-				email
+				email,
+				password,
+				job,
+				address
 			}
 
-			var getListuser = JSON.parse(localStorage.getItem('db'));
-			// getListuser.push(user)
-			// localStorage.setItem('db', JSON.stringify(getListuser));
+			localStorage.setItem('db', JSON.stringify(user));
+			
+			alert('dang ky thanh cong')
 
-console.log(getListuser.length)
+			window.location.href='./index.html';
 
-			for(let i = 0; i < getListuser.length ; i++) {
-				console.log(getListuser[i])
-			}
 		})
 	</script>
 

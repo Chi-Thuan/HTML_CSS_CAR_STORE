@@ -246,7 +246,9 @@ body {
      margin-top: 50px;
      display: grid;
     grid-template-columns: repeat(4,1fr);
-    grid-gap: 50px 15px
+    grid-gap: 50px 15px;
+    padding : 0 10px;
+    justify-items: center;
 }
 .product_Item {
     width: 100%;
@@ -360,46 +362,54 @@ body {
         font-size: 14px;
     }
     .product_Item {
-        width: 100%;
-        height: 110px;
-    }
-    .btnRespon {
-        position: absolute;
-        bottom: 0;
         display: block;
-    }
-    .description_Car {
-        display: none;
+        width: 100%;
+        min-width: 140px;
+        height: 110px;
+        overflow: visible;
     }
     .product_Item img {
-        position: absolute;
         width: 100%;
-        height: 80%;
-        object-fit: cover;
-        z-index: -1;
+        height: 50% ;
+        margin-top: 35px;
     }
     .name_Car {
         height: 35px;
         padding: 0 0 0 10px;
-        font-size: 12px;
+        font-size: 10px;
     }
     .description_Car {
-        padding: 35px 0px 10px 20px;
+        position: absolute;
         height: 100%;
-        min-height: 220px;
+        min-height: 0px;
+        padding: 0;
+        width: 100%;
+        top: calc(50% + 35px);
+        height: 75px;
+        padding-top: 20px;
+        background-color: black;
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
 }
     .description_Car .price_Car{
         padding-top: 2px;
         font-size: 12px;
     }
+    .list_product .btnGroup {
+        margin-top: 10px ;
+        justify-content: space-between;
+    }
     .description_Car .feature_Car {
-        color: var(--colorXam_Nhat);
-        font-size: 9px;
-        font-weight: 300;
+        display: none;
+    }
+    .product_Item .button-small {
+        height: 30px;
+        font-size: 8px;
     }
 }
-
-
 
 /*-------- contact ----------------------------------------------*/
 .contact_content {
