@@ -52,8 +52,8 @@ body {
 }
 .header__menu {
     left: 0;
-    top: 0;
-    width: 100%;
+    top: 0 ;
+    width: 100% ;
     position: fixed;
     background-color: rgba(0, 0, 0, 0.85);
     height: 70px;
